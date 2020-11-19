@@ -10,8 +10,6 @@ import java.util.Scanner;
 public class CircleMain {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		Circle circle = new Circle();
-		
 		System.out.println("원 1의 x좌표를 기입하세요.");
 		double x1 = scanner.nextDouble();
 		System.out.println("원 1의 y좌표를 기입하세요.");
@@ -25,10 +23,17 @@ public class CircleMain {
 		double y2 = scanner.nextDouble();
 		System.out.println("원 2의 반지름을 기입하세요.");
 		double rad2 = scanner.nextDouble();
-		
-		circle.getPosition(x1, x2, y1, y2, rad1, rad2);
-		circle.setCir();
-		
+        
+        Circle circle = new Circle(x1, x2, y1, y2, rad1, rad2);
+		String resultMsg = circle.getCir();
+        // System.out.println(circle.getCir());
+        System.out.println('one');
+        System.out.println(resultMsg);
+
+        circle.setPosition(x1, x2, y1, y2, rad1, rad2);
+        System.out.println('two');
+        resultMsg = circle.getCir();
+        System.out.println(resultMsg);
 		scanner.close();
 	}
 }
